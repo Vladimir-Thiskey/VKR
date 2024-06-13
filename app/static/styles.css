@@ -1,0 +1,225 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: #121212;
+    color: #ffffff;
+}
+
+a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.sidebar {
+    width: 240px;
+    background-color: #1f1f1f;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    padding: 20px;
+}
+
+.sidebar .logo img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 30px;
+}
+
+.sidebar nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar nav ul li {
+    margin: 20px 0;
+}
+
+.sidebar nav ul li a {
+    text-decoration: none;
+    color: #b3b3b3;
+    font-size: 18px;
+    display: block;
+    padding: 10px;
+    border-radius: 4px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.sidebar nav ul li a.active,
+.sidebar nav ul li a:hover {
+    background-color: #333;
+    color: #ffffff;
+}
+
+.main-content {
+    margin-left: 260px;
+    padding: 40px;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+header input[type="text"] {
+    width: 70%;
+    padding: 15px;
+    font-size: 18px;
+    border: none;
+    border-radius: 30px;
+    background-color: #1f1f1f;
+    color: #ffffff;
+    outline: none;
+    transition: background-color 0.3s;
+}
+
+header input[type="text"]:focus {
+    background-color: #333;
+}
+
+header button {
+    padding: 15px 20px;
+    font-size: 18px;
+    background-color: #0f9d58;
+    color: #ffffff;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+header button:hover {
+    background-color: #0a6d3e;
+}
+
+.selected-movies {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.selected-movie {
+    background-color: #2a2a2a;
+    padding: 10px 15px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.selected-movie span {
+    font-size: 16px;
+}
+
+.selected-movie button {
+    background-color: #ff5c5c;
+    border: none;
+    border-radius: 50%;
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 5px;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.selected-movie button:hover {
+    background-color: #e04a4a;
+}
+
+.recommendations, .best-all-time {
+    margin-bottom: 60px;
+}
+
+.recommendations h2, .best-all-time h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #333;
+    padding-bottom: 10px;
+}
+
+.movie-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.movie-item {
+    background-color: #2a2a2a;
+    border-radius: 10px;
+    overflow: hidden;
+    width: calc(25% - 20px);
+    /*flex: 0 0 calc(16.66% - 20px); Ensure each item is a minimum width to fit 6 per row */
+    position: relative;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.movie-item img {
+    width: 100%;
+    max-height: 550px;
+    height: calc(100% - 15%);
+}
+
+.movie-info {
+    padding: 15px;
+}
+
+.movie-info h3 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 500;
+    text-overflow: ellipsis;
+    width: 95%;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.movie-info p {
+    margin: 5px 0 10px;
+    color: #b3b3b3;
+}
+
+.rating {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #0f9d58;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.movie-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+#autocompleteList {
+    position: absolute;
+    z-index: 1000;
+    list-style-type: none;
+    border-radius: 8px;
+    margin: 0;
+    padding: 0;
+    overflow-y: hidden;
+    background-color: #1f1f1f;
+}
+
+#autocompleteList li {
+    padding: 10px;
+    cursor: pointer;
+    color: #ffffff;
+}
+
+#autocompleteList li:hover {
+    background-color: #333;
+}

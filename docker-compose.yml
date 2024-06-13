@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  app:
+#    image: rim/recomm
+    build: .
+    ports:
+      - "80:8080"
+    volumes:
+      - ./matrix_models:/matrix_models
+    depends_on:
+      - db
+    environment:
+      - MONGODB_URL=mongodb://db:27017
+
+  db:
+    image: mongo:latest
+    volumes:
+      - ./mongo_data:/data/db

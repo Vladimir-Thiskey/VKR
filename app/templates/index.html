@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recommend you</title>
+    <link rel="icon" type="image/png" sizes="16x16" href="static/favicon.ico">
+    <link rel="stylesheet" href="static/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo">
+            <img src="static/logo.png" alt="Recommend you">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#" data-category="best" class="active">Лучшее</a></li>
+                <li><a href="#" data-category="криминал">Криминал</a></li>
+                <li><a href="#" data-category="драма">Драма</a></li>
+                <li><a href="#" data-category="комедия">Комедия</a></li>
+                <li><a href="#" data-category="боевик">Боевик</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="main-content">
+        <header>
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Введите названия фильмов и нажмите Enter"
+                oninput="getAutocomplete()"
+            />
+            <button onclick="fetchMovies()">Поиск</button>
+            <ul id="autocompleteList" style="display: none;"></ul>
+        </header>
+        <div id="selected-movies" class="selected-movies"></div>
+        <section id="recommendations-section" class="recommendations" style="display: none;">
+            <h2>Кино для Вас</h2>
+            <div id="movie-list" class="movie-list"></div>
+        </section>
+        <section id="best-all-time-section" class="best-all-time">
+            <h2>Лучшие за всё время</h2>
+            <div id="best-all-time-movies" class="movie-list">
+            </div>
+        </section>
+    </div>
+    <script src="static/script.js"></script>
+</body>
+</html>
